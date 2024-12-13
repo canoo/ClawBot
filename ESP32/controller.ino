@@ -3,6 +3,7 @@
 #include <ESP32Servo.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+//
 
 // Display settings (if still needed)
 #define SCREEN_WIDTH 128
@@ -36,6 +37,8 @@ int lastServo1Pos = SERVO_START_POS;
 int lastServo2Pos = SERVO_START_POS;
 int lastServo3Pos = SERVO_START_POS;
 int lastServo4Pos = SERVO_START_POS;
+
+//
 
 void setServoPositionIfChanged(Servo &s, int &lastPos, int newPos) {
     newPos = constrain(newPos, SERVO_MIN_POS, SERVO_MAX_POS);
