@@ -19,8 +19,9 @@ Servo servo4; // Right joystick Y
 
 int servoPin1 = 19;
 int servoPin2 = 18;
-int servoPin3 = 4;
-int servoPin4 = 17;
+int servoPin3 = 17;
+int servoPin4 = 16;
+//int servopin5 = 4;
 
 // Servo parameters
 const int SERVO_MIN_POS = 0;
