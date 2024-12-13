@@ -67,29 +67,46 @@ void setup() {
         servo5.attach(servoPin5);
 }
 
-String receivedMessage = "";
+
 int angle = 0;
 
 void loop() {
-    for (int angle = 0; angle <= 90; angle += 10) {
+    for (angle = 0; angle < 180; angle++) {
         servo1.write(angle);
         servo2.write(angle);
         servo3.write(angle);
         servo4.write(angle);
         servo5.write(angle);
-        delay(100); // Adjust delay as needed
-        display.clearDisplay();
-        display.setCursor(0, 0);
-        display.print("Servo1: ");
-        display.println(angle);
-        display.print("Servo2: ");
-        display.println(angle);
-        display.print("Servo3: ");
-        display.println(angle);
-        display.print("Servo4: ");
-        display.println(angle);
-        display.print("Servo5: ");
-        display.println(angle);
-        display.display();
+        delay(15);
     }
+    delay(2000);
+    delay(2000);
+    display.clearDisplay();
+    display.setCursor(0, 0);
+    display.println("Motor A");
+    display.display();
+    analogWrite(enA, 255);
+    digitalWrite(in1, HIGH);
+    digitalWrite(in2, LOW);
+    delay(2000);
+    digitalWrite(in1, LOW);
+    digitalWrite(in2, HIGH);
+    delay(2000);
+    digitalWrite(in1, LOW);
+    digitalWrite(in2, LOW);
+    delay(2000);
+    display.clearDisplay();
+    display.setCursor(0, 0);
+    display.println("Motor B");
+    display.display();
+    analogWrite(enB, 255);
+    digitalWrite(in3, HIGH);
+    digitalWrite(in4, LOW);
+    delay(2000);
+    digitalWrite(in3, LOW);
+    digitalWrite(in4, HIGH);
+    delay(2000);
+    digitalWrite(in3, LOW);
+    digitalWrite(in4, LOW);
+    delay(2000);
 }
